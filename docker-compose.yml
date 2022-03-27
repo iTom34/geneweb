@@ -3,10 +3,11 @@ version: "2"
 services:
   geneweb:
     #build: .
-    image: itom34/geneweb:7.0.0
+    image: itom34/geneweb:latest
     container_name: geneweb
     volumes:
       - ./data:/geneweb/distribution/bases
+      - ./only.txt:/geneweb/distribution/gw/only.txt
     ports:
       - 2317:2317
       - 2316:2316
