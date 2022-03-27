@@ -1,0 +1,17 @@
+---
+version: "2"
+services:
+  geneweb:
+    #build: .
+    image: itom34/geneweb:7.0.0
+    container_name: geneweb
+    volumes:
+      - ./data:/geneweb/distribution/bases
+    ports:
+      - 2317:2317
+      - 2316:2316
+    environment:
+      - UID=1000
+      - GID=1000
+      - TZ=Europe/Oslo
+    restart: unless-stopped
